@@ -17,9 +17,9 @@ $(document).ready(function(){
             })
             let pageIndex = 'page'+((index/3)+1)+''
             if (index % 3 === 0) {
-                listeRecettesHtml += '<div id="'+pageIndex+'">';
+                listeRecettesHtml += '<div name="cartes" id="'+pageIndex+'">';
             }
-            listeRecettesHtml += '<div><div><div class="card"><div class="card-image"><img src="'+recette.img+'"><span class="card-title">'+recette.nom+'</span><a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a></div><div class="card-content"><ul>'+ingredientsHtml+'</ul><ul>'+quantiteHtml+'</ul></div></div></div></div>';
+            listeRecettesHtml += '<div class="card"><div class="card-image"><img src="'+recette.img+'"><span class="card-title">'+recette.nom+'</span><a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a></div><div class="card-content"><ul>'+ingredientsHtml+'</ul><ul>'+quantiteHtml+'</ul></div></div>';
             if ((index + 1) % 3 === 0 || index === recettes.length - 1) {
                 listeRecettesHtml += '</div>';
             }
@@ -28,39 +28,49 @@ $(document).ready(function(){
         //On force le visiteur a atterir sur la page 1 et à n'afficher que 3 cartes
         window.location.href="#page1"
         $('#page1').siblings('div').hide()
+        $('#page1-btn').parent().addClass('active')
 
 
         //Ici on fait apparaître 3 cartes en fonction de la page et on fait disparaître les autres
-        //p1
-        $('#page1-btn').click(function(){
-            $('#page1').css('display', 'flex')
-            $('#page1').siblings('div').hide()
+        //previous
+        $('#prev-btn').click(function(){
+            if (window.location.hash > "#page1"){
+                let Loc = window.location.href
+                let page = parseInt(Loc.slice(53, 54))
+                let prevPage = 'page'+(page-1)+''
+                window.location.href='#'+prevPage+''
+            }
+            else{
+                window.location.href="#page5"
+            }
+            
         })
-        //p2
-        $('#page2-btn').click(function(){
-            $('#page2').css('display', 'flex')
-            $('#page2').siblings('div').hide()
-        })
-        //p3
-        $('#page3-btn').click(function(){
-            $('#page3').css('display', 'flex')
-            $('#page3').siblings('div').hide()
-        })
-        //p4
-        $('#page4-btn').click(function(){
-            $('#page4').css('display', 'flex')
-            $('#page4').siblings('div').hide()
-        })
-        //p5
-        $('#page5-btn').click(function(){
-            $('#page5').css('display', 'flex')
-            $('#page5').siblings('div').hide()
+        //next
+            $('#next-btn').click(function(){
+                if (window.location.hash < "#page5"){
+                    let Loc = window.location.href
+                    let page = parseInt(Loc.slice(53, 54))
+                    let nextPage = 'page'+(page+1)+''
+                    window.location.href='#'+nextPage+''
+                }
+                else{
+                    window.location.href="#page1"
+                }        
+            })
+
+        //Au changement d'url on récupère l'id target et on affiche la div correspondante
+        $(window).on('hashchange', function(){
+            let Loc = window.location.hash
+            let numPage = Loc.slice(5, 6)
+            let page = '#page'+numPage+'-btn'
+            $('li').removeClass('active')
+            $(page).parent().addClass('active')
+            $(Loc).css('display', 'flex')
+            $(Loc).siblings('div').hide()
         })
     });
 });
 
-//On récupère les étapes de chaque recette
-const etapes = []
 
 
 

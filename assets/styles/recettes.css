@@ -1,8 +1,15 @@
+body{
+    background-color: #edcf7465;
+}
+
+main{
+    margin-top: 100px;
+}
+
 .box{
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 100px;
 }
 
 .paginationBox{
@@ -21,11 +28,40 @@
     justify-content: space-around;
 }
 
-.box div{
+.box div[name="cartes"]{
+    display: flex;
+    gap: 10px;
+}
+
+.accueil{
+    background: url('../img/accueil-recettes.jpeg') center center no-repeat;
+    height: 720px;
+    justify-content: center;
     display: flex;
 }
 
+.glass{
+    background-color: #ffffff7e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 350px;
+    width: 50%;
+    padding: 40px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+
 /*Pages*/
+
+/*MediaQueries*/
+@media (max-width: 426px){
+   .box div[name="cartes"]{
+    flex-direction: column;
+   } 
+}
 
 
 
