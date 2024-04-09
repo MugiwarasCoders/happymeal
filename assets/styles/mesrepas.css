@@ -1,0 +1,26 @@
+.repas{
+	width: 100%;
+	background-color: grey;
+}
+
+.cartes_latérales{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	border: 2px solid black;
+	border-radius: 10px;
+	margin: 3px 0;
+	background-color: white;
+}
+
+.cartes_latérales img{
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	margin-right: 15px;
+}
+
+main{
+	margin-top: 100px;
+}
+

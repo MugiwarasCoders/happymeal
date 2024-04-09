@@ -2,6 +2,7 @@
    "recettes":[
       {
          "nom":"Poulet rôti aux herbes",
+         "img":"../img/poulet_rôti_aux_herbes.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -32,6 +33,7 @@
       },
       {
          "nom":"Salade de quinoa aux légumes grillés",
+         "img":"../img/salade_quinoa_légumes_grillés.jpg",
          "categorie":"Entrée",
          "temps_preparation":"30 minutes",
          "ingredients":[
@@ -70,6 +72,7 @@
       },
       {
          "nom":"Tarte aux pommes",
+         "img":"../img/tarte_aux_pommes.jpg",
          "categorie":"Dessert",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -110,6 +113,7 @@
       },
       {
          "nom":"Soupe de lentilles",
+         "img":"../img/soupe_de_lentilles.jpg",
          "categorie":"Entrée",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -150,6 +154,7 @@
       },
       {
          "nom":"Pâtes Carbonara",
+         "img":"../img/pates_carbonara.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -190,50 +195,8 @@
          ]
       },
       {
-         "nom":"Risotto aux champignons",
-         "categorie":"Plat principal",
-         "temps_preparation":"40 minutes",
-         "ingredients":[
-            {
-               "nom":"Riz",
-               "quantite":"300g"
-            },
-            {
-               "nom":"Oigons",
-               "quantite":"3"
-            },
-            {
-               "nom":"Vin blanc",
-               "quantite":"50g"
-            },
-            {
-               "nom":"Parmesan",
-               "quantite":"50g"
-            },
-            {
-               "nom":"Beurre",
-               "quantite":"10g"
-            },
-            {
-               "nom":"Huile d'olive",
-               "quantite":"10g"
-            }
-         ],
-         "etapes":[
-            "Dans une grande poêle, faites chauffer l'huile d'olive à feu moyen.",
-            "Ajoutez l'oignon et faites-le revenir jusqu'à ce qu'il soit translucide.",
-            "Ajoutez les champignons et l'ail, puis faites-les cuire jusqu'à ce qu'ils soient tendres et dorés.",
-            "Ajoutez le riz dans la poêle et mélangez-le bien avec les champignons et l'oignon.",
-            "Versez le vin blanc dans la poêle et remuez jusqu'à ce qu'il soit absorbé par le riz.",
-            "Ajoutez une louche de bouillon chaud dans la poêle et remuez le riz jusqu'à ce que le liquide soit absorbé.",
-            "Répétez cette étape en ajoutant une louche de bouillon à la fois et en remuant constamment jusqu'à ce que le riz soit cuit al dente et crémeux.",
-            "Retirez la poêle du feu et incorporez le parmesan râpé.",
-            "Assaisonnez avec du sel et du poivre selon votre goût.",
-            "Servez le risotto chaud, garni de persil frais haché."
-         ]
-      },
-      {
          "nom":"Salade de fruits frais",
+         "img":"../img/salade_de_fruits_frais.jpg",
          "categorie":"Dessert",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -253,6 +216,7 @@
       },
       {
          "nom":"Ratatouille provençale",
+         "img":"../img/ratatouille.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -294,6 +258,7 @@
       },
       {
          "nom":"Salade César",
+         "img":"../img/salade_cesar.jpg",
          "categorie":"Entrée",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -333,6 +298,7 @@
       },
       {
          "nom":"Risotto aux champignons",
+         "img":"../img/risotto_champignons.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"40 minutes",
          "ingredients":[
@@ -376,6 +342,7 @@
       },
       {
          "nom":"Muffins aux myrtilles",
+         "img":"../img/muffin_myrtille.jpg",
          "categorie":"Dessert",
          "temps_preparation":"30 minutes",
          "ingredients":[
@@ -417,6 +384,7 @@
       },
       {
          "nom":"Lasagnes végétariennes",
+         "img":"../img/lasagnes_vege.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"1 heure 30 minutes",
          "ingredients":[
@@ -459,6 +427,7 @@
       },
       {
          "nom":"Salade niçoise",
+         "img":"../img/salade_nicoise.jpg",
          "categorie":"Entrée",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -502,6 +471,7 @@
       },
       {
          "nom":"Tiramisu",
+         "img":"../img/tiramisu.jpg",
          "categorie":"Dessert",
          "temps_preparation":"30 minutes (+ temps de repos)",
          "ingredients":[
