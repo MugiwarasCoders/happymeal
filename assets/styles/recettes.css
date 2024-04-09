@@ -1,19 +1,28 @@
 .box{
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     gap: 10px;
-}
-
-.card{
-    min-width: 20%;
-    min-height: 455px;
+    margin-top: 100px;
 }
 
 .paginationBox{
     margin-top: 20px;
     display: flex;
     justify-content: center;
+}
+
+.card{
+    max-height: 535px;
+    max-width: 340px;
+}
+
+.card-content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box div{
+    display: flex;
 }
 
 /*Pages*/

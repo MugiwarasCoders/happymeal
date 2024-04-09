@@ -38,7 +38,7 @@
          "temps_preparation":"30 minutes",
          "ingredients":[
             {
-               "nom":"quinoa",
+               "nom":"Quinoa",
                "quantite":"200g"
             },
             {
@@ -200,10 +200,22 @@
          "categorie":"Dessert",
          "temps_preparation":"20 minutes",
          "ingredients":[
-            "Fruits variés (fraises, kiwis, oranges, raisins, etc.), coupés en morceaux",
-            "Jus d'orange ou de citron",
-            "Miel ou sirop d'érable (facultatif)",
-            "Feuilles de menthe fraîche pour garnir"
+            {
+               "nom": "Fruits variés (fraises, kiwis, oranges, raisins, etc.), coupés en morceaux",
+               "quantite": ""
+            },
+            {
+               "nom": "Jus d'orange ou de citron",
+               "quantite": ""
+            },
+            {
+               "nom": "Miel ou sirop d'érable (facultatif)",
+               "quantite": ""
+            },
+            {
+               "nom": "Feuilles de menthe fraîche pour garnir",
+               "quantite": ""
+            }  
          ],
          "etapes":[
             "Coupez tous les fruits en morceaux de taille similaire et placez-les dans un grand bol.",

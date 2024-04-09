@@ -1,17 +1,25 @@
+let ingredients;
+
 $(document).ready(function(){
     fetch('../scripts/data.json')
     .then(response => response.json())
     .then(data => {
         const recettes = data.recettes;
-        console.log(recettes);
 
         let listeRecettesHtml = '';
         recettes.forEach((recette, index) => {
+            let recetteIngredients = recette.ingredients
+            let ingredientsHtml = ''
+            let quantiteHtml = ''
+            recetteIngredients.forEach(ingredient => {
+                ingredientsHtml += '<li>'+ingredient.nom+'</li>'
+                quantiteHtml += '<li>'+ingredient.quantite+'</li>'
+            })
             let pageIndex = 'page'+((index/3)+1)+''
             if (index % 3 === 0) {
-                listeRecettesHtml += '<div class="row" id="'+pageIndex+'">';
+                listeRecettesHtml += '<div id="'+pageIndex+'">';
             }
-            listeRecettesHtml += '<div class="col-md-4"><div class="card" style="width: 18rem;"><img src="'+recette.img+'" class="card-img-top" alt="image-carte"><div class="card-body"><h5 class="card-title">'+recette.nom+'</h5><p class="card-text">'+recette.ingredients.nom+'</p><a href="#" class="btn btn-primary">Go somewhere</a></div></div></div>';
+            listeRecettesHtml += '<div><div><div class="card"><div class="card-image"><img src="'+recette.img+'"><span class="card-title">'+recette.nom+'</span><a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a></div><div class="card-content"><ul>'+ingredientsHtml+'</ul><ul>'+quantiteHtml+'</ul></div></div></div></div>';
             if ((index + 1) % 3 === 0 || index === recettes.length - 1) {
                 listeRecettesHtml += '</div>';
             }
