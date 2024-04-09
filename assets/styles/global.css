@@ -1,0 +1,52 @@
+/*--------------HEADER---------------*/
+#card_recettes{
+  margin-top: 15vh;
+  width: max-content;
+}
+
+.carte1{
+  padding: 1rem !important;
+  margin-right: 16% !important;
+}
+
+.carte2{
+  padding: 1rem !important;
+}
+
+.croix {
+  font-family: 'Material Icons';
+  font-size: 24px; /* ajustez la taille selon vos besoins */
+  /* autres propriétés de style nécessaires */
+}
+
+.card .card-content{
+  font-size: 20px;
+}
+
+.btn-floating{
+  position: relative !important;
+  margin-left: 280px;
+  margin-top: 2vh;
+}
+
+header img{
+  width: 50px;
+}
+
+#icone_reset{
+  position: absolute;
+  position: fixed;
+  right: 50px;
+  top: 22vh;
+  width: 70px;
+}
+
+#icone_reset:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.activator img{
+  padding-top: 2vh;
+}

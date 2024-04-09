@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/assets/styles/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script src="assets/scripts/script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Compiled and minified JavaScript -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+      defer
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Accueil</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="red accent-4">
+        <div class="nav-wrapper">
+          <img src="assets/img/logo_header.png" alt="logo site" />
+
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a href="" class="valign-wrapper"
+                ><img src="assets/img/icone_favoris.png" alt="image étoiles" />
+                Recettes Favorites</a
+              >
+            </li>
+            <li>
+              <a href="" class="valign-wrapper"
+                ><img
+                  src="assets/img/icone_cuisiner.png"
+                  alt="image toque"
+                />Ingrédients</a
+              >
+            </li>
+          </ul>
+        </div>
+        <nav>
+          <div class="nav-wrapper white">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required autocomplete="off" />
+                <label class="label-icon" for="search">
+                  <i class="material-icons red-text">search</i>
+                </label>
+                <i class="material-icons">close</i>
+              </div>
+              <ul id="search-results" class="dropdown-content"></ul>
+                
+              </div>
+            </form>
+          </div>
+        </nav>
+      </nav>
+    </header>
+
+    <section class="container" id="card_recettes">
+
+        <div class="row">
+        <div class="carte1 card col m5">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator p3" src="">
+            <a class="btn-floating right waves-effect waves-light red"
+                id="ajouter"><i class="material-icons">add</i></a
+              >
+          </div>
+          <div class="card-content">
+            <span class="divRecettes activator grey-text text-darken-4"><i class="material-icons right"></i></span>
+            <p></p>
+          </div>
+          <div class="card-reveal recette-ingredients">
+            
+            <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="carte2 card col m5">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator p3" src="">
+              <a class="btn-floating right waves-effect waves-light red"
+                  ><i class="material-icons">add</i></a
+                >
+            </div>
+            <div class="card-content">
+              <span class="divRecettes activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal recette-ingredients">
+              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+          </div>
+
+         
+
+    </section>
+  
+      <img
+        src="assets/img/icone_reset.png"
+        alt="icone recharger"
+        id="icone_reset"
+      />
+
+      
+
+  </body>
+</html>
