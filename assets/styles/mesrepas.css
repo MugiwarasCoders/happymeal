@@ -1,26 +1,86 @@
-.repas{
-	width: 100%;
-	background-color: grey;
-}
-
-.cartes_latérales{
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	border: 2px solid black;
-	border-radius: 10px;
-	margin: 3px 0;
-	background-color: white;
-}
-
-.cartes_latérales img{
-	width: 100px;
-	height: 100px;
-	border-radius: 10px;
-	margin-right: 15px;
+body{
+    background-color: #edcf7465;
 }
 
 main{
+    margin-top: 100px;
+}
+
+/*-----------Accueil-----------*/
+
+.accueil{
+    background: url('../img/accueil-menu.jpeg') center center no-repeat;
+    height: 720px;
+    justify-content: center;
+    display: flex;
+}
+
+.glass{
+    background-color: #ffffff7e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 350px;
+    width: 50%;
+    padding: 40px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+.rond{
+	width: 50px;
+	height: 50px;
+	border-radius: 20px;
+	margin-right: 15px;
+}
+
+.collection{
+	margin: 0;
+}
+
+.collection-item{
+	text-decoration: none;
+}
+
+/*--------------------MENU------------------*/
+
+.menu{
 	margin-top: 100px;
+}
+
+.resetMenu{
+	border-radius: 10px;
+	background-color: #6EA8FE;
+	padding: 20px;
+}
+
+.titreMenu{
+	display: flex;
+	justify-content: space-between;
+}
+
+/*---------------TABLEAU--------------------*/
+
+table td, th{
+	border: 2px solid black;
+	text-align: center;
+}
+
+thead{
+	background-color: #202124;
+	color: white;
+}
+
+table img{
+	height: 100px;
+	margin-right: 10px;
+	border-radius: 10px;
+	border: 4px solid #1F2023;
+}
+
+.tabData{
+	display: flex;
+	align-items: center;
 }
 
