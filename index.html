@@ -30,15 +30,15 @@
 
   <body>
     <header>
-      <nav class="red accent-4">
+      <nav>
         <div class="nav-wrapper">
-          <img src="assets/img/logo_header.png" alt="logo site" />
+          <a href="index.html"><img src="assets/img/logo_header.png" alt="logo site" class="logo_site center"/></a>
 
           <ul class="right hide-on-med-and-down">
             <li>
               <a href="" class="valign-wrapper"
-                ><img src="assets/img/icone_favoris.png" alt="image étoiles" />
-                Recettes Favorites</a
+                ><img src="assets/img/icone_favoris.png" alt="image étoiles" class="icone_favoris"/>
+                </a
               >
             </li>
             <li>
@@ -46,7 +46,7 @@
                 ><img
                   src="assets/img/icone_cuisiner.png"
                   alt="image toque"
-                />Ingrédients</a
+                /></a
               >
             </li>
           </ul>
@@ -57,7 +57,7 @@
               <div class="input-field">
                 <input id="search" type="search" required autocomplete="off" />
                 <label class="label-icon" for="search">
-                  <i class="material-icons red-text">search</i>
+                  <i class="search material-icons">search</i>
                 </label>
                 <i class="material-icons">close</i>
               </div>
@@ -69,14 +69,14 @@
         </nav>
       </nav>
     </header>
-
+ 
     <section class="container" id="card_recettes">
-
-        <div class="row">
-        <div class="carte1 card col m5">
+      <h1 class="center">LES RECETTES DU JOUR</h1>
+      <div class="row center">
+        <div class="carte1 card col m4">
           <div class=" card-image waves-effect waves-block waves-light">
             <img class="activator p3" src="">
-            <a class="btn-floating right waves-effect waves-light red"
+            <a class="btn-floating right waves-effect waves-light "
                 id="ajouter"><i class="material-icons">add</i></a
               >
           </div>
@@ -87,31 +87,59 @@
           <div class="card-reveal recette-ingredients">
             
             <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
-            <span class="ingredients"></span>
+            <span class="catégorie"></span>
             <span class="temps_preparation"></span>
+            <span class="ingredients"></span>
+            <span class="étapes"></span>
+            
           </div>
         </div>
 
         <div class="row">
-          <div class="carte1 card col m5">
-            <div class="card-image waves-effect waves-block waves-light">
+          <div class="carte1 card col m4">
+            <div class=" card-image waves-effect waves-block waves-light">
               <img class="activator p3" src="">
-              <a class="btn-floating right waves-effect waves-light red"
-                  ><i class="material-icons">add</i></a
+              <a class="btn-floating right waves-effect waves-light "
+                  id="ajouter"><i class="material-icons">add</i></a
                 >
             </div>
             <div class="card-content">
-              <span class="divRecettes activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+              <span class="divRecettes activator grey-text text-darken-4"><i class="material-icons right"></i></span>
               <p></p>
             </div>
             <div class="card-reveal recette-ingredients">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              <span class="catégorie"></span>
+              <span class="temps_preparation"></span>
+              <span class="ingredients"></span>
+              <span class="étapes"></span>
             </div>
           </div>
+  
 
-         
-
+        <div class="row">
+          <div class="carte1 card col m4">
+            <div class=" card-image waves-effect waves-block waves-light">
+              <img class="activator p3" src="">
+              <a class="btn-floating right waves-effect waves-light "
+                  id="ajouter"><i class="material-icons">add</i></a
+                >
+            </div>
+            <div class="card-content">
+              <span class="divRecettes activator grey-text text-darken-4"><i class="material-icons right"></i></span>
+              <p></p>
+            </div>
+            <div class="card-reveal recette-ingredients">
+              
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              <span class="catégorie"></span>
+              <span class="temps_preparation"></span>
+              <span class="ingredients"></span>
+              <span class="étapes"></span>
+            </div>
+          </div>
+      </div>
     </section>
   
       <img

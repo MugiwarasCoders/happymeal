@@ -1,110 +1,37 @@
 //------------FONCTION POUR RANDOMISER ET AFFICHER LES NOMS DES RECETTES--------------------//
-
-
 $(document).ready(function(){
   fetch("assets/scripts/data.json")
   .then(response => response.json())
   .then(data => {
     const recettes = data.recettes;
-    const cards = document.querySelectorAll(".card");
+    const cartes = document.querySelectorAll(".carte1"); // Sélectionnez toutes les cartes
 
     let recettesSelectionnees = [];
-      cards.forEach(card => {
-  // Sélectionner une recette aléatoire
-  const recetteAleatoire = recettes[Math.floor(Math.random() * recettes.length)];
+    let indicesRecettesSelectionnees = [];
 
-  // Définir l'attribut src de l'image de la carte avec le chemin de l'image correspondante à partir de la recette aléatoire
-  const img = card.querySelector(".activator");
-  img.src = recetteAleatoire.img;
+    cartes.forEach((carte, index) => { // Utilisez forEach pour itérer sur toutes les cartes
+      let recetteAleatoire;
+      do {
+        recetteAleatoire = recettes[Math.floor(Math.random() * recettes.length)];
+      } while (indicesRecettesSelectionnees.includes(recettes.indexOf(recetteAleatoire))); // Vérifiez si la recette aléatoire a déjà été sélectionnée
 
-  // Déplacer la déclaration de la variable reveal à l'intérieur de la boucle forEach
-  const reveal = card.querySelector(".card-reveal");
-  reveal.querySelector(".card-title").textContent = recetteAleatoire.nom;
+      indicesRecettesSelectionnees.push(recettes.indexOf(recetteAleatoire)); // Ajoutez l'indice de la recette à la liste des indices sélectionnés
 
-    // Créer une chaîne de caractères contenant les ingrédients
-    let ingredientsHTML = "<ul>";
-    recetteAleatoire.ingredients.forEach(ingredient => {
-        ingredientsHTML += "<li>" + ingredient.nom + " - " + ingredient.quantite + "</li>";
-    });
-    ingredientsHTML += "</ul>";
-
-    // Insérer les ingrédients dans le contenu HTML avec une liste à puces
-    reveal.querySelector(".ingredients").innerHTML = ingredientsHTML;
-
-    // Créer une chaîne de caractères contenant les étapes avec des retours à la ligne
-    const etapesHTML = recetteAleatoire.etapes.join("<br>");
-
-    // Insérer les étapes dans le contenu HTML avec des retours à la ligne
-    reveal.querySelector("p").innerHTML = etapesHTML;
-
-    const card = querySelector(".carte1")
-
-    // Ajouter le temps de préparation
-    reveal.querySelector(".temps-preparation").textContent = "Temps de préparation : " + recetteAleatoire.temps_preparation;
-        cards.forEach(card => {
-          let recetteAleatoire;
-
-    // Sélectionner une recette aléatoire qui n'a pas encore été sélectionnée
-    do {
-      recetteAleatoire = recettes[Math.floor(Math.random() * recettes.length)];
-    } while (recettesSelectionnees.includes(recetteAleatoire));
-
-    recettesSelectionnees.push(recetteAleatoire); // Ajouter la recette sélectionnée à la liste des recettes sélectionnées
-
-    // Définir l'attribut src de l'image de la carte avec le chemin de l'image correspondante à partir de la recette aléatoire
-    const img = card.querySelector(".activator");
-    img.src = recetteAleatoire.img;
-
-    // Ajouter le titre de la recette à la balise <span> dans le contenu de la carte
-    const title = card.querySelector(".card-title");
-    const divRecettes = card.querySelector(".divRecettes");
-    title.textContent = recetteAleatoire.nom;
-    divRecettes.textContent = recetteAleatoire.nom;
-  
-
-    // Ajouter recette dans card reveal
-    const reveal = card.querySelector(".card-reveal");
-    reveal.querySelector(".card-title").textContent = recetteAleatoire.nom; // Définir le titre de la recette
-    
-    // Créer une chaîne de caractères contenant les étapes avec des retours à la ligne
-    const etapesHTML = recetteAleatoire.etapes.join("<br>");
-
-    // Insérer les étapes dans le contenu HTML avec des retours à la ligne
-    reveal.querySelector("p").innerHTML = etapesHTML;
-    });
-  })
-  .catch(error => console.error("Erreur lors du chargement du fichier JSON :", error));
-});
-
-
-//-----------------FONCTION POUR BOUTTON RESET--------------------//
-
-$("#icone_reset").click(function(){
-  fetch("assets/scripts/data.json")
-  .then(response => response.json())
-  .then(data => {
-    const recettes = data.recettes;
-
-    const cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-      // Sélectionner une recette aléatoire
-      const recetteAleatoire = recettes[Math.floor(Math.random() * recettes.length)];
-
-      // Définir l'attribut src de l'image de la carte avec le chemin de l'image correspondante à partir de la recette aléatoire
-      const img = card.querySelector(".activator");
+      const img = carte.querySelector(".activator");
       img.src = recetteAleatoire.img;
 
-      // Ajouter le titre de la recette à la balise <span> dans le contenu de la carte
-      const title = card.querySelector(".card-title");
-      const divRecettes = card.querySelector(".divRecettes");
+      const title = carte.querySelector(".card-title");
       title.textContent = recetteAleatoire.nom;
+
+      const divRecettes = carte.querySelector(".divRecettes");
       divRecettes.textContent = recetteAleatoire.nom;
 
-      // Ajouter recette dans card reveal
-      const reveal = card.querySelector(".card-reveal");
-      reveal.querySelector(".card-title").textContent = recetteAleatoire.nom; // Définir le titre de la recette
-      // Définir les ingrédients de la recette
+      const reveal = carte.querySelector(".card-reveal");
+      reveal.querySelector(".card-title").textContent = recetteAleatoire.nom;
+
+      const etapesHTML = recetteAleatoire.etapes.join("<br>");
+      reveal.querySelector("p").innerHTML = etapesHTML;
+
       let ingredientsHTML = "<ul>";
       recetteAleatoire.ingredients.forEach(ingredient => {
         ingredientsHTML += "<li>" + ingredient.nom + " - " + ingredient.quantite + "</li>";
@@ -112,13 +39,86 @@ $("#icone_reset").click(function(){
       ingredientsHTML += "</ul>";
       reveal.querySelector(".ingredients").innerHTML = ingredientsHTML;
 
+      reveal.querySelector(".temps_preparation").textContent = "Temps de préparation : " + recetteAleatoire.temps_preparation;
+
+      reveal.querySelector(".temps_preparation").textContent = "Temps de préparation : " + recetteAleatoire.temps_preparation;
       // Définir les étapes de la recette sans virgule + revenir à la ligne
-      const etapesHTML = recetteAleatoire.etapes.join("<br>");
-      reveal.querySelector("p").innerHTML = etapesHTML;
+     
     });
-  })
-  .catch(error => console.error("Erreur lors du chargement du fichier JSON :", error));
+  });
 });
+
+
+      
+     
+//     cards.forEach(card => {
+//         let recetteAleatoire;
+//       recettesSelectionnees.push(recetteAleatoire); // Ajouter la recette sélectionnée à la liste des recettes sélectionnées
+     
+//       // Ajouter le titre de la recette à la balise <span> dans le contenu de la carte
+//        const title = card.querySelector(".card-title");
+//       const divRecettes = card.querySelector(".divRecettes");
+//       title.textContent = recetteAleatoire.nom;
+//       divRecettes.textContent = recetteAleatoire.nom;
+
+//       // Ajouter recette dans card reveal
+//       const reveal = card.querySelector(".card-reveal");
+//       reveal.querySelector(".card-title").textContent = recetteAleatoire.nom; // Définir le titre de la recette
+      
+//       // Créer une chaîne de caractères contenant les étapes avec des retours à la ligne
+//       const etapesHTML = recetteAleatoire.etapes.join("<br>");
+
+//       // Insérer les étapes dans le contenu HTML avec des retours à la ligne
+//       reveal.querySelector("p").innerHTML = etapesHTML;
+//     });
+//   })
+//   .catch(error => console.error("Erreur lors du chargement du fichier JSON :", error));
+// });
+
+
+//-----------------FONCTION POUR BOUTTON RESET--------------------//
+
+// $("#icone_reset").click(function(){
+//   fetch("assets/scripts/data.json")
+//   .then(response => response.json())
+//   .then(data => {
+//     const recettes = data.recettes;
+
+//     const cards = document.querySelectorAll(".card");
+
+//     cards.forEach(card => {
+//       // Sélectionner une recette aléatoire
+//       const recetteAleatoire = recettes[Math.floor(Math.random() * recettes.length)];
+
+//       // Définir l'attribut src de l'image de la carte avec le chemin de l'image correspondante à partir de la recette aléatoire
+//       const img = card.querySelector(".activator");
+//       img.src = recetteAleatoire.img;
+
+//       // Ajouter le titre de la recette à la balise <span> dans le contenu de la carte
+//       const title = card.querySelector(".card-title");
+//       const divRecettes = card.querySelector(".divRecettes");
+//       title.textContent = recetteAleatoire.nom;
+//       divRecettes.textContent = recetteAleatoire.nom;
+
+//       // Ajouter recette dans card reveal
+//       const reveal = card.querySelector(".card-reveal");
+//       reveal.querySelector(".card-title").textContent = recetteAleatoire.nom; // Définir le titre de la recette
+//       // Définir les ingrédients de la recette
+//       let ingredientsHTML = "<ul>";
+//       recetteAleatoire.ingredients.forEach(ingredient => {
+//         ingredientsHTML += "<li>" + ingredient.nom + " - " + ingredient.quantite + "</li>";
+//       });
+//       ingredientsHTML += "</ul>";
+//       reveal.querySelector(".ingredients").innerHTML = ingredientsHTML;
+
+      
+      
+
+
+//     });
+//   })
+//   .catch(error => console.error("Erreur lors du chargement du fichier JSON :", error));
+// });
 
 
 

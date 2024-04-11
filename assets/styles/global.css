@@ -1,16 +1,48 @@
 /*--------------HEADER---------------*/
+.body{
+  background-image: url(../img/image_fond_healthy.jpg);
+}
+
+.search{
+  color: #9FC490 !important;
+}
+
+.nav-wrapper{
+  background-color: #9FC490;
+
+}
+
+.logo_site{
+  margin-left: 1%;
+  margin-bottom: 2vh !important;
+  width: 70px;
+  margin-top: 0;
+}
+
+header img{
+ width: 40px;
+ margin-top: 3vh;
+}
+
+h1{
+  color: #7ea073;
+  text-shadow: 1px 1px 1px;
+  font-size: small;
+  margin-bottom: 0 !important;
+}
+
 #card_recettes{
-  margin-top: 15vh;
+  margin-top: 10vh;
   width: max-content;
 }
 
-.carte1{
-  padding: 1rem !important;
-  margin-right: 16% !important;
-}
 
-.carte2{
-  padding: 1rem !important;
+.carte1{
+  padding: 1% !important;
+  margin: 1.6% !important;
+  width: 30% !important;
+  min-height: 475px !important;
+
 }
 
 .croix {
@@ -19,18 +51,20 @@
   /* autres propriétés de style nécessaires */
 }
 
-.card .card-content{
-  font-size: 20px;
-}
 
 .btn-floating{
   position: relative !important;
   margin-left: 280px;
   margin-top: 2vh;
+  margin-bottom: 2vh;
+  background-color: #9FC490 !important;
+  z-index: 10px !important;
+
 }
 
-header img{
-  width: 50px;
+.card .card-content{
+  font-size: 20px;
+  padding: 0 !important;
 }
 
 #icone_reset{
@@ -42,9 +76,14 @@ header img{
 }
 
 #icone_reset:hover{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   cursor: pointer;
   border-radius: 50%;
+}
+
+#icone_reset:active{
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset;
+
 }
 
 .activator img{
