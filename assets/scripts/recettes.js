@@ -23,12 +23,44 @@ $(document).ready(function(){
                 listeRecettesHtml += '<div name="cartes" id="'+pageIndex+'">';
             }
 
-            listeRecettesHtml += '<div class="card"><div class="card-image"><img src="'+recette.img+'"><span class="card-title">'+recette.nom+'</span><a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#recette'+i+'"><i class="material-icons">add</i></a></div><div class="card-content"><ul>'+ingredientsHtml+'</ul><ul>'+quantiteHtml+'</ul></div></div><div id="recette'+i+'" class="modal"><div class="modal-content"><h4>'+recette.nom+'</h4><p>A bunch of text</p></div><div class="modal-footer"><a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a></div></div>';
+            listeRecettesHtml += '<div class="card"><div class="card-image"><img src="'+recette.img+'"><span class="card-title">'+recette.nom+'</span><a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#recette'+i+'"><i class="material-icons">add</i></a></div><div class="card-content"><ul>'+ingredientsHtml+'</ul><ul>'+quantiteHtml+'</ul></div></div><div id="recette'+i+'" class="modal"><div class="modal-content"><section><div><h4>'+recette.nom+'</h4><img src="'+recette.img+'"></div><div><h5>Ingrédients</h5><p>'+ingredientsHtml+'</p></div></section><h5 class="etapes">Etapes:</h5><p>- '+recette.etapes.join('<br>- ')+'</p></div><div class="modal-footer"><button class="addFavs">Fav</button><button class="modal-close waves-effect waves-green btn">Fermer</button></div></div>';
+
             if ((index + 1) % 3 === 0 || index === recettes.length - 1) {
                 listeRecettesHtml += '</div>';
             }
         });
+        //Inititation de nos variables
+        let favoris = [];
+
         $('.box').html(listeRecettesHtml);
+
+        //Ici on configure le bouton de retour de nos modals
+        $('.modal-close').click(function(){
+            let page = window.location.href
+            let longPage = page.length
+            let prevPage = page.slice(0, 48)
+            window.location.href=prevPage
+        })
+
+        //Ici on configure le bouton d'ajout aux favoris de chaque modal
+        $('.addFavs').click(function(){
+            let modal = $(this).closest('.modal')
+            let title = modal.find('h4').text()
+            //On récupère les données déjà inscrites dans le localstorage favoris
+            let localFavs = localStorage.getItem('favs')
+            if(localFavs === ''){
+                localStorage.setItem('favs', title)
+            }
+            else{
+                //on les ajoute au tableau favoris
+                favoris.push(localFavs)
+                //puis on ajoute les nouveaux favs au tableau favoris
+                favoris.push(title)
+                //et on push le tableau dans le localStorage favs
+                localStorage.setItem('favs', favoris)
+                //Enfin on ajoute les favoris à la page favoris
+            }        
+        })
 
         //On force le visiteur a atterir sur la page 1 et à n'afficher que 3 cartes
         window.location.href="#page1"

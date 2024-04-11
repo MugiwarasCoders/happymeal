@@ -3,13 +3,18 @@ $(document).ready(function(){
     .then(response => response.json())
     .then(data => {
         const recettes = data.recettes;
-        console.log(recettes);
 
         // Construire une chaîne HTML contenant toutes les recettes et les étapes
         let dropdownList = '';
+        //On récupère les favoris stockés dans le localStorage
+        let favoris = localStorage.getItem('favs')
+        favoris = favoris.split(',');
+        console.log(favoris)
+        favoris.forEach(favori => {
+            dropdownList += '<li><a>'+favori+'</a></li>'
+        })
         recettes.forEach(recette => {
             localStorage.setItem(recette.nom, recette.img);
-            dropdownList += '<li><a>'+recette.nom+'</a></li>'
         });
 
         $('#dropdown1').html(dropdownList)
