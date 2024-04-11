@@ -59,26 +59,26 @@
 				</p>
 			</div>
 		</section>
-		<section class="repas">
-			<h1>Mes repas enregistrés</h1>
-		</section>
 		<section class="menu">
 			<div class="titreMenu">
-				<h1>Mon menu</h1><button class="resetMenu">Réinitialiser mon menu</button>
+				<h1>Mon menu</h1>
 			</div>
 			<table class="striped">
 				<thead>
 					<tr> 
 						<th>
 							<!-- Dropdown Trigger -->
-							<a class='dropdown-trigger btn' data-target='dropdown1'>Drop Me!</a>
+							<a class='dropdown-trigger btn' data-target='dropdown1'>Mes recettes</a>
 
 							<!-- Dropdown Structure -->
 							<ul id='dropdown1' class='dropdown-content'>
 
 							</ul>
-						</th> <th>Petit déjeuner</th> <th colspan="2">Déjeuner</th> <th colspan="2">Dîner</th> </tr>
-					<tr> <th></th> <th></th> <th>Plat</th> <th>Dessert</th> <th>Plat</th> <th>Dessert</th> </tr>
+						</th> <th rowspan="2">Petit déjeuner</th> <th colspan="2">Déjeuner</th> <th colspan="2">Dîner</th> </tr>
+					<tr>
+						<th>
+							<button class="resetMenu"><img src="../img/poubelle.png"><p>Réinitialiser mon menu</p></button>
+						</th> <th>Plat</th> <th>Dessert</th> <th>Plat</th> <th>Dessert</th> </tr>
 				</thead>
 				<tbody>
 					<tr class="impair"><th>Lundi</th> <td id="pd1"></td> <td id="dp1"></td> <td id="dd1"></td> <td id="dip1"></td> <td id="did1"></td> </tr>

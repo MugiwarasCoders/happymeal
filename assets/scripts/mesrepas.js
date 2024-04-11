@@ -35,6 +35,12 @@ $(document).ready(function(){
 
         // Ajout de l'événement click pour les éléments 'td'
         $('td').click(function(){
+            if ($(this).text()){
+                localStorage.removeItem('repasPending')
+                $(this).empty()
+                tdId = $(this).attr('id')
+                localStorage.removeItem(tdId)
+            }
             //on récupère le repas cliqué dans le localStorage
             let repas = localStorage.getItem('repasPending');
             if (repas !== null){
