@@ -10,44 +10,27 @@
 	<link href="../styles/normalize.css" rel="stylesheet" defer>
 	<script type="text/javascript" src="../scripts/mesrepas.js" defer></script>
 	<link rel="stylesheet" type="text/css" href="../styles/mesrepas.css">
+	<link href="../styles/global.css" rel="stylesheet">
 	<title>Happy Meal</title>
 </head>
 <body>
 	<header>
-		<nav class="red accent-4">
+		<!-- Dropdown Structure -->
+		<ul id="dropdown2" class="dropdown-content">
+			<li><a href="favoris.html">Favoris⭐</a></li>
+			<li class="divider"></li>
+			<li><a href="panier.html">Panier🛒</a></li>
+		</ul>
+		<nav>
 			<div class="nav-wrapper">
-				<img src="../img/logo_header.png" alt="logo site" />
-				<ul class="right hide-on-med-and-down">
-					<li>
-						<a href="mesrepas.html" class="valign-wrapper">Mes repas</a>
-					</li>
-					<li>
-						<a href="recettes.html" class="valign-wrapper">Recettes</a>
-					</li>
-					<li>
-					<a href="" class="valign-wrapper">Recettes Favorites</a>
-					</li>
-					<li>
-					<a href="" class="valign-wrapper">Ingrédients</a>
-					</li>
-				</ul>
+			<a href="../index.html" class="brand-logo"><img alt="logo" src="../img/logo_header.png"></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">Mon Menu</a></li>
+				<li><a href="recettes.html">Recettes</a></li>
+				<!-- Dropdown Trigger -->
+				<li><a class="dropdown-trigger" href="" data-target="dropdown2">Profil<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
 			</div>
-			<nav>
-				<div class="nav-wrapper white">
-					<form>
-						<div class="input-field">
-							<input id="search" type="search" required autocomplete="off" />
-							<label class="label-icon" for="search">
-							<i class="material-icons red-text">search</i>
-							</label>
-							<i class="material-icons">close</i>
-						</div>
-						<ul id="search-results" class="dropdown-content">
-
-						</ul>
-					</form>
-				</div>
-			</nav>
 		</nav>
 	</header>
 	<main>

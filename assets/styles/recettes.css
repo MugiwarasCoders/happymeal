@@ -80,6 +80,10 @@ main{
     backdrop-filter: blur(5px);
 }
 
+#page1:target{
+    scroll-margin-top: 1000px;
+}
+
 
 /*Pages*/
 

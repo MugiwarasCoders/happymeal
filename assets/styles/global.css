@@ -1,27 +1,19 @@
 /*--------------HEADER---------------*/
 .section_accueil{
-    margin-left: 16% !important;
-    margin-top: 10vh;
-    width: max-content;
-  }
-  
-  .search{
-    color: #9FC490 !important;
-  }
-  
-  .nav-wrapper{
-    background-color: #9FC490;
-  
-  }
-  
-  .logo_site{
-    margin-left: 1%;
-    margin-bottom: 2vh !important;
-    width: 70px;
-    margin-top: 0;
-  }
-  
-  header img{
-   width: 40px;
-   margin-top: 3vh;
-  }
+  margin-left: 16% !important;
+  margin-top: 10vh;
+  width: max-content;
+}
+
+.search{
+  color: #9FC490 !important;
+}
+
+.nav-wrapper{
+  background-color: #9FC490;
+
+}
+
+.fav_dropdown{
+  width: 15px;
+}

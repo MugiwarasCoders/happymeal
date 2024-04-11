@@ -98,14 +98,19 @@ $(document).ready(function(){
         $(window).on('hashchange', function(){
             let Loc = window.location.hash
             let numPage = Loc.slice(5, 6)
+            console.log(numPage)
             let page = '#page'+numPage+'-btn'
             $('li').removeClass('active')
             $(page).parent().addClass('active')
             $(Loc).css('display', 'flex')
             $(Loc).siblings('div').hide()
         })
+        // On active le dropdown
+        $('.dropdown-trigger').dropdown();
     });
 });
+
+
 
 
 

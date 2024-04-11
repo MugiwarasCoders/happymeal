@@ -34,6 +34,8 @@ $(document).ready(function(){
                 $('.collection').append(favHtml);
             }
         });
+        // On active le dropdown
+        $('.dropdown-trigger').dropdown();
     });
 });
 
