@@ -1,5 +1,4 @@
-
-
+let allRecettes = []
 //------------FONCTION POUR RANDOMISER ET AFFICHER LES RECETTES--------------------//
 $(document).ready(function(){
   fetch("assets/scripts/data.json")
@@ -35,7 +34,8 @@ $(document).ready(function(){
       reveal.querySelector(".card-title").textContent = recetteAleatoire.nom;
       let ingredientsHTML = "<ul>";
       recetteAleatoire.ingredients.forEach(ingredient => {
-        ingredientsHTML += "<li>" + ingredient.nom + " - " + ingredient.quantite + "</li>";
+        ingredientsHTML += "<li>" + ingredient.nom + " - " + ingredient.quantite + "<button class='bouton_ajouter'>+</button></li>";
+
       });
       ingredientsHTML += "</ul>";
       reveal.querySelector(".ingredients").innerHTML = ingredientsHTML;
@@ -101,7 +101,7 @@ $("#icone_reset").click(function(){
       reveal.querySelector(".card-title").textContent = recetteAleatoire.nom;
       let ingredientsHTML = "<ul>";
       recetteAleatoire.ingredients.forEach(ingredient => {
-        ingredientsHTML += "<li>" + ingredient.nom + " - " + ingredient.quantite + "</li>";
+        ingredientsHTML += "<li>" + ingredient.nom + " - " + ingredient.quantite + "<button class='bouton_ajouter'>+</button></li>";
       });
       ingredientsHTML += "</ul>";
       reveal.querySelector(".ingredients").innerHTML = ingredientsHTML;
@@ -153,6 +153,7 @@ function rechercher() {
 // FONCTION POUR AFFICHER LES RESULTATS
 
 function afficherResultats(resultats) {
+  
   const elementResultatsRecherche = document.getElementById('search-results');
   elementResultatsRecherche.innerHTML = '';
 
@@ -161,9 +162,12 @@ function afficherResultats(resultats) {
   } else {
     const listeResultats = document.createElement('ul');
     resultats.forEach(resultat => {
+      
+      
       const elementListe = document.createElement('li');
       const elementNom = document.createElement('span');
       elementNom.innerHTML = resultat.nom;
+      allRecettes.push(resultat);
       elementListe.appendChild(elementNom);
       listeResultats.appendChild(elementListe);
       // Ajouter une balise <br> après chaque élément de la liste
@@ -171,6 +175,7 @@ function afficherResultats(resultats) {
 
       // Afficher les ingrédients
     });
+    console.log(allRecettes)
     elementResultatsRecherche.appendChild(listeResultats);
   }
 }

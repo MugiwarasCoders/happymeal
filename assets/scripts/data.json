@@ -20,7 +20,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -38,7 +38,7 @@
          "temps_preparation":"30 minutes",
          "ingredients":[
             {
-               "nom":"quinoa",
+               "nom":"Quinoa",
                "quantite":"200g"
             },
             {
@@ -51,14 +51,10 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             },
             {
                "nom":"Jus de citron",
-               "quantite":"10g"
-            },
-            {
-               "nom":"Huile d'olive",
                "quantite":"10g"
             }
          ],
@@ -98,7 +94,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -139,7 +135,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -180,7 +176,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -200,10 +196,22 @@
          "categorie":"Dessert",
          "temps_preparation":"20 minutes",
          "ingredients":[
-            "Fruits variés (fraises, kiwis, oranges, raisins, etc.), coupés en morceaux",
-            "Jus d'orange ou de citron",
-            "Miel ou sirop d'érable (facultatif)",
-            "Feuilles de menthe fraîche pour garnir"
+            {
+               "nom": "Fruits variés (fraises, kiwis, oranges, raisins, etc.), coupés en morceaux",
+               "quantite": "300g"
+            },
+            {
+               "nom": "Jus d'orange ou de citron",
+               "quantite": "Trois cuillère à soupe"
+            },
+            {
+               "nom": "Miel ou sirop d'érable (facultatif)",
+               "quantite": "Une cuillère à soupe"
+            },
+            {
+               "nom": "Feuilles de menthe fraîche pour garnir",
+               "quantite": "50g"
+            }  
          ],
          "etapes":[
             "Coupez tous les fruits en morceaux de taille similaire et placez-les dans un grand bol.",
@@ -242,7 +250,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -284,7 +292,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -316,7 +324,7 @@
             },
             {
                "nom":"Vin blanc",
-               "quantite":"50g"
+               "quantite":"50cl"
             },
             {
                "nom":"Beurre",
@@ -324,7 +332,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -410,7 +418,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -457,7 +465,7 @@
             },
             {
                "nom":"Huile d'olive",
-               "quantite":"10g"
+               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[

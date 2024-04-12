@@ -16,6 +16,7 @@ body{
   width: 100%; 
   height: 100%; 
   box-sizing: border-box; 
+  
 }
 
 .input-field {
@@ -23,6 +24,7 @@ body{
   margin-bottom: 5vh; 
 
 }
+
 
 #search-results li{
   width: 100%;
@@ -35,13 +37,16 @@ body{
   cursor: pointer;
 }
 
-.lien_menu_navbar{
-  min-height: 2vh !important;
+#lien_menu_navbar{
+  min-height: 81px !important;
+
 }
 
 .search {
   line-height: 0.8 !important;
   color: #9fc490 !important;
+  margin-left:  40%;
+  padding-right: 2vh;
 }
 
 .nav-wrapper{
@@ -59,12 +64,13 @@ body{
 
 header img{
  width: 40px;
- margin-top: 1.7vh;
+ margin-top: 2.5vh;
 
 }
 
 .img_menu{
   width: 45px;
+  margin-top: 0;
 }
 
 .img_recette{
@@ -166,5 +172,18 @@ hr{
 
 .activator img{
   padding-top: 2vh;
+}
+
+.bouton_ajouter{
+  border: none;
+  border-radius: 30px;
+  background-color: #92d276;
+  color: white;
+  font-size: 120%;
+}
+
+.bouton_ajouter:hover{
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
