@@ -1,0 +1,69 @@
+body{
+    background-color: #edcf7465;
+}
+
+main{
+    margin-top: 100px;
+}
+
+/*-----------Accueil-----------*/
+
+.accueil{
+    background: url('../img/accueil-menu.jpeg') center center no-repeat;
+}
+
+/*--------------------MENU------------------*/
+
+.menu{
+	margin-top: 100px;
+}
+
+.resetMenu{
+	border-radius: 10px;
+	background-color: #26A69A;
+	padding: 20px;
+}
+
+.titreMenu{
+	display: flex;
+	justify-content: space-between;
+}
+
+/*---------------TABLEAU--------------------*/
+
+table td, th{
+	border: 2px solid black;
+	text-align: center;
+}
+
+thead{
+	background-color: #202124;
+	color: white;
+}
+
+table img:not(.resetMenu img){
+	height: 100px;
+	margin-right: 10px;
+	border-radius: 10px;
+	border: 4px solid #1F2023;
+}
+
+.resetMenu{
+	padding: 5px;
+	cursor: pointer;
+}
+
+.resetMenu img{
+	width: 40px;
+	height: 40px;
+}
+
+.tabData{
+	display: flex;
+	align-items: center;
+}
+
+#dropdown1{
+	min-width: 150px;
+}
+

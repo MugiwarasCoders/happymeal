@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="../styles/normalize.css" rel="stylesheet" defer>
+	<script type="text/javascript" src="../scripts/mesrepas.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="../styles/mesrepas.css">
+	<link href="../styles/global.css" rel="stylesheet">
+	<title>Happy Meal</title>
+</head>
+<body>
+	<header>
+		<!-- Dropdown Structure -->
+		<ul id="dropdown2" class="dropdown-content">
+			<li><a href="favoris.html">Favoris⭐</a></li>
+			<li class="divider"></li>
+			<li><a href="panier.html">Panier🛒</a></li>
+		</ul>
+		<nav>
+			<div class="nav-wrapper">
+			<a href="../index.html" class="brand-logo"><img alt="logo" src="../img/logo_header.png"></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">Mon Menu</a></li>
+				<li><a href="recettes.html">Recettes</a></li>
+				<!-- Dropdown Trigger -->
+				<li><a class="dropdown-trigger" href="" data-target="dropdown2">Profil<i class="material-icons right">arrow_drop_down</i></a></li>
+			</ul>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<section class="accueil">
+			<div class="glass">
+				<h1>Créez votre propre menu!</h1>
+				<p>Sélectionnez nos meilleurs recettes choisies par vos soins et confectionnez votre menu de la semaine.
+					<br>N'hésitez pas à ajouter cette page à vos Favoris et faîtes en un outil du quotidient!
+				</p>
+			</div>
+		</section>
+		<section class="menu">
+			<div class="titreMenu">
+				<h1>Mon menu</h1>
+			</div>
+			<table class="striped">
+				<thead>
+					<tr> 
+						<th>
+							<!-- Dropdown Trigger -->
+							<a class='dropdown-trigger btn' data-target='dropdown1'>Mes recettes</a>
 
+							<!-- Dropdown Structure -->
+							<ul id='dropdown1' class='dropdown-content'>
+
+							</ul>
+						</th> <th rowspan="2">Petit déjeuner</th> <th colspan="2">Déjeuner</th> <th colspan="2">Dîner</th> </tr>
+					<tr>
+						<th>
+							<button class="resetMenu"><img src="../img/poubelle.png"><p>Réinitialiser mon menu</p></button>
+						</th> <th>Plat</th> <th>Dessert</th> <th>Plat</th> <th>Dessert</th> </tr>
+				</thead>
+				<tbody>
+					<tr class="impair"><th>Lundi</th> <td id="pd1"></td> <td id="dp1"></td> <td id="dd1"></td> <td id="dip1"></td> <td id="did1"></td> </tr>
+					<tr class="pair"><th>Mardi</th> <td id="pd2"></td> <td id="dp2"></td> <td id="dd2"></td> <td id="dip2"></td> <td id="did2"></td> </tr>
+					<tr class="impair"><th>Mercredi</th> <td id="pd3"></td> <td id="dp3"></td> <td id="dd3"></td> <td id="dip3"></td> <td id="did3"></td> </tr>
+					<tr class="pair"><th>Jeudi</th> <td id="pd4"></td> <td id="dp4"></td> <td id="dd4"></td> <td id="dip4"></td> <td id="did4"></td> </tr>
+					<tr class="impair"><th>Vendredi</th> <td id="pd5"></td> <td id="dp5"></td> <td id="dd5"></td> <td id="dip5"></td> <td id="did5"></td> </tr>
+					<tr class="pair"><th>Samedi</th> <td id="pd6"></td> <td id="dp6"></td> <td id="dd6"></td> <td id="dip6"></td> <td id="did6"></td> </tr>
+					<tr class="impair"><th>Dimanche</th> <td id="pd7"></td> <td id="dp7"></td> <td id="dd7"></td> <td id="dip7"></td> <td id="did7"></td> </tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+	<footer></footer>
+</body>
+</html>

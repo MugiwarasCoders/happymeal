@@ -1,0 +1,87 @@
+.box{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.paginationBox{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    max-height: 535px;
+    max-width: 340px;
+}
+
+.card-content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.box div[name="cartes"]{
+    display: flex;
+    gap: 10px;
+}
+
+.accueil{
+    background: url('../img/accueil-recettes.jpeg') center center no-repeat;
+}
+
+/*-------------------Mes Modals------------------*/
+
+.modal{
+    flex-direction: column;
+    min-height: 100vh !important;
+    width: 60%;
+}
+
+.modal-content img{
+    width: 150px;
+    border-radius: 10px;
+    border: 4px solid #1F2023;
+}
+
+.modal-content{
+    min-height: 90%;
+}
+
+.modal section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.etapes{
+    margin-top: 20px;
+}
+
+.glass{
+    background-color: #ffffff7e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    margin-top: 350px;
+    width: 50%;
+    padding: 40px;
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+}
+
+#page1:target{
+    scroll-margin-top: 1000px;
+}
+
+
+/*Pages*/
+
+/*MediaQueries*/
+@media (max-width: 426px){
+   .box div[name="cartes"]{
+    flex-direction: column;
+   } 
+}
+
+
+
