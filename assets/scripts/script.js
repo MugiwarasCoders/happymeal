@@ -7,7 +7,7 @@ $(document).ready(function(){
   .then(data => {
     const recettes = data.recettes;
     const cartes = document.querySelectorAll(".carte1"); // Sélectionnez toutes les cartes
-    $(".dropdown-trigger").dropdown();
+    $(".dropdown-trigger").dropdown(); // activer dropdown de la navbar 
     let recettesSelectionnees = [];
     let indicesRecettesSelectionnees = [];
 
@@ -45,6 +45,18 @@ $(document).ready(function(){
       let etapesHTML = recetteAleatoire.etapes;
       etapesHTML = etapesHTML.join("<br>");
       reveal.querySelector(".étapes").innerHTML = etapesHTML;
+
+      // Ajoute un gestionnaire d'événements click à chaque élément <a> avec l'ID #ajouter
+      document.querySelectorAll('#ajouter').forEach(function(element) {
+        element.addEventListener('click', function() {
+            // Récupère le nom de la recette associée à cet élément
+            const nomRecette = this.closest('.carte1').querySelector('.card-title').textContent;
+            
+            // Stocke le nom de la recette dans le stockage local
+            // Choisir une clé appropriée pour stocker le nom de la recette
+            localStorage.setItem("Recettes favorites", nomRecette);
+        });
+      });
     });
   });
 });      
@@ -104,57 +116,62 @@ $("#icone_reset").click(function(){
 });      
 
 //-----------------FONCTION POUR BARRE DE RECHERCHE--------------------//
-document.getElementById('search').addEventListener('input', search);
-document.getElementById('search-button').addEventListener('click', search);
+document.getElementById('search').addEventListener('input', rechercher);
+document.getElementById('search-button').addEventListener('click', rechercher);
 
-function search() {
-    const searchTerm = document.getElementById('search').value.toLowerCase();
-    const searchResultsElement = document.getElementById('search-results');
+function rechercher() {
+  const termeRecherche = document.getElementById('search').value.toLowerCase();
+  const elementResultatsRecherche = document.getElementById('search-results');
 
-    // Si la valeur de l'input est vide, effacer la liste de résultats
-    if (searchTerm.trim() === '') {
-        searchResultsElement.innerHTML = '';
-        return; // Sortir de la fonction, pas besoin de poursuivre
-    }
-  
-    // Fetch the JSON file
-    fetch('assets/scripts/data.json')
-        .then(response => response.json())
-        .then(data => {
-            // Filter data based on search term
-            const filteredData = data.recettes.filter(item => {
-                return item.nom.toLowerCase().includes(searchTerm);
-            });
-            
-            // Display search results
-            displayResults(filteredData);
-        })
-        .catch(error => console.error('Error fetching data:', error));
+  // Si la valeur de l'input est vide, effacer la liste de résultats
+  if (termeRecherche.trim() === '') {
+      elementResultatsRecherche.innerHTML = '';
+      return; // Sortir de la fonction, pas besoin de poursuivre
+  }
+
+  // Fetch 
+  fetch('assets/scripts/data.json')
+      .then(response => response.json())
+      .then(data => {
+          // Filtrer
+          const donneesFiltrees = data.recettes.filter(item => {
+              // Vérifier si le nom de la recette correspond
+              const correspondanceNom = item.nom.toLowerCase().includes(termeRecherche);
+              // Vérifier si l'un des ingrédients correspond
+              const correspondanceIngredient = item.ingredients.some(ingredient => {
+                  // Vérifier si le nom de l'ingrédient existe avant d'appeler toLowerCase()
+                  return ingredient.nom && ingredient.nom.toLowerCase().includes(termeRecherche);
+              });
+              return correspondanceNom || correspondanceIngredient;
+          });
+          
+          afficherResultats(donneesFiltrees);
+      })
+      .catch(error => console.error('Erreur lors de la récupération des données :', error));
 }
 
+// FONCTION POUR AFFICHER LES RESULTATS
 
+function afficherResultats(resultats) {
+  const elementResultatsRecherche = document.getElementById('search-results');
+  elementResultatsRecherche.innerHTML = '';
 
-//FONCTION POUR AFFICHER LES RESULTATS
-
-function displayResults(results) {
-  const searchResultsElement = document.getElementById('search-results');
-  searchResultsElement.innerHTML = '';
-
-  if (results.length === 0) {
-      searchResultsElement.innerHTML = 'Aucun résultat trouvé.';
+  if (resultats.length === 0) {
+    elementResultatsRecherche.innerHTML = 'Aucun résultat trouvé.';
   } else {
-      const resultList = document.createElement('ul');
-      results.forEach(result => {
-          const listItem = document.createElement('li');
-          const nomElement = document.createElement('span');
-          nomElement.innerHTML = result.nom;
-        
-          listItem.appendChild(nomElement);
-          resultList.appendChild(listItem);
-          // Ajouter une balise <br> après chaque élément de la liste
-          resultList.appendChild(document.createElement('br'));
-      });
-      searchResultsElement.appendChild(resultList);
+    const listeResultats = document.createElement('ul');
+    resultats.forEach(resultat => {
+      const elementListe = document.createElement('li');
+      const elementNom = document.createElement('span');
+      elementNom.innerHTML = resultat.nom;
+      elementListe.appendChild(elementNom);
+      listeResultats.appendChild(elementListe);
+      // Ajouter une balise <br> après chaque élément de la liste
+      listeResultats.appendChild(document.createElement('br'));
+
+      // Afficher les ingrédients
+    });
+    elementResultatsRecherche.appendChild(listeResultats);
   }
 }
 

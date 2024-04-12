@@ -20,14 +20,29 @@ body{
 
 .input-field {
   position: relative; 
-  margin-bottom: 20px; 
+  margin-bottom: 5vh; 
+
+}
+
+#search-results li{
+  width: 100%;
+  font-size: 120%;
+  border-bottom: solid 1px #3f673060;
+}
+
+#search-results li:hover{
+  background-color: #3f673060;
+  cursor: pointer;
+}
+
+.lien_menu_navbar{
+  min-height: 2vh !important;
 }
 
 .search {
-  line-height: 1 !important;
+  line-height: 0.8 !important;
   color: #9fc490 !important;
 }
-
 
 .nav-wrapper{
   background-color: #578f43;
@@ -62,6 +77,7 @@ header img{
   color: #578f43 !important;
 }
 
+/*---------------------CSS BODY---------------------*/
 h1{
   color: #578f43;
   text-shadow: 1px 1px 1px;
@@ -78,8 +94,6 @@ h1{
 
 }
 
-
-
 .navbar2{
   height: 6vh;
 }
@@ -90,8 +104,11 @@ h1{
   top: 5px;
 }
 
-#search-results{
-  position: relative;
+#search-results {
+  position: absolute; /* Modifier la position en absolute */
+  top: 100%; /* Positionner les résultats en dessous de la barre de recherche */
+  left: 0;
+  width: 100%;
   background-color: #60914e !important;
   z-index: 10;
 }
@@ -101,7 +118,6 @@ hr{
   height: 0.1vh !important;
 
 }
-
 
 .croix {
   font-family: 'Material Icons';
