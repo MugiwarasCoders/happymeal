@@ -1,4 +1,5 @@
 let ingredients;
+let favoris = [];
 
 $(document).ready(function(){
     fetch('../scripts/data.json')
@@ -29,8 +30,6 @@ $(document).ready(function(){
                 listeRecettesHtml += '</div>';
             }
         });
-        //Inititation de nos variables
-        let favoris = [];
 
         $('.box').html(listeRecettesHtml);
 
@@ -48,17 +47,24 @@ $(document).ready(function(){
             let title = modal.find('h4').text()
             //On récupère les données déjà inscrites dans le localstorage favoris
             let localFavs = localStorage.getItem('favs')
-            if(localFavs === ''){
+            console.log(localFavs)
+            if(localFavs === null || localFavs === undefined){
                 localStorage.setItem('favs', title)
             }
             else{
                 //on les ajoute au tableau favoris
                 favoris.push(localFavs)
-                //puis on ajoute les nouveaux favs au tableau favoris
+                //si les favoris ne contiennent pas déjà cette recette
+                if (localFavs.includes(title)){
+                    return false
+                }
+                else{
+                //on ajoute les nouveaux favs au tableau favoris
                 favoris.push(title)
                 //et on push le tableau dans le localStorage favs
                 localStorage.setItem('favs', favoris)
                 //Enfin on ajoute les favoris à la page favoris
+                }
             }        
         })
 

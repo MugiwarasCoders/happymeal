@@ -1,6 +1,4 @@
 let allRecettes = [];
-let test = ''
-
 
 $(document).ready(function(){
     fetch ('../scripts/data.json')
@@ -8,16 +6,7 @@ $(document).ready(function(){
     .then (data => {
         const recettes = data.recettes;
         recettes.forEach(recette => {
-            let recetteIngredients = recette.ingredients
-            let ingredientsHtml = ''
-            let quantiteHtml = ''
-            recetteIngredients.forEach(ingredient => {
-                ingredientsHtml += '<li>'+ingredient.nom+'</li>'
-                quantiteHtml += '<li>'+ingredient.quantite+'</li>'
-                test += ingredientsHtml
-            })
             allRecettes.push(recette)
-            console.log(recetteIngredients)
         });
 
         //Ici on récupère les favoris ajoutés dans le localStorage et on les place dans un tableau
@@ -30,10 +19,20 @@ $(document).ready(function(){
             let favoriExiste = allRecettes.some(recette => recette.nom === favName);
             if (favoriExiste){
                 let recette = allRecettes.find(recette => recette.nom === favName);
-                let favHtml = '<a class="collection-item">'+recette.nom+'</a>';
+                let favHtml = '<li class="collection-item"><p>'+recette.nom+'</p><button class="supItem">Supprimer</button></li>';
                 $('.collection').append(favHtml);
             }
         });
+
+        //On configure le bouton supprimer de chaque élément de la liste
+        $('.supItem').click(function(){
+            $(this).parent().remove()
+            //Ensuite on met a jour le localStorage
+            let test = $(this).siblings('p').text()
+            let index = favListe.indexOf(test)
+            favListe.splice(index, 1)
+            localStorage.setItem('favs', favListe)
+        })
         // On active le dropdown
         $('.dropdown-trigger').dropdown();
     });
