@@ -37,11 +37,9 @@ $(document).ready(function(){
         $('.dropdown-trigger').dropdown();
 
         $('.voir').click(function(){
-            let recette = $(this).siblings('p').text()
-            window.location.href="recettes.html"++""
+            let recetteNom = $(this).siblings('p').text();
+            console.log(allRecettes)
         })
     });
 });
-
-
 

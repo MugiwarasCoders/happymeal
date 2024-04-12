@@ -104,7 +104,6 @@ $(document).ready(function(){
         $(window).on('hashchange', function(){
             let Loc = window.location.hash
             let numPage = Loc.slice(5, 6)
-            console.log(numPage)
             let page = '#page'+numPage+'-btn'
             $('li').removeClass('active')
             $(page).parent().addClass('active')
