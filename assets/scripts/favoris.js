@@ -19,7 +19,7 @@ $(document).ready(function(){
             let favoriExiste = allRecettes.some(recette => recette.nom === favName);
             if (favoriExiste){
                 let recette = allRecettes.find(recette => recette.nom === favName);
-                let favHtml = '<li class="collection-item"><p>'+recette.nom+'</p><button class="supItem">Supprimer</button></li>';
+                let favHtml = '<li class="collection-item"><p>'+recette.nom+'</p><button class="supItem"><img src="../img/bin.png"></button><button class="voir">Voir la recette</button></li>';
                 $('.collection').append(favHtml);
             }
         });
@@ -28,13 +28,18 @@ $(document).ready(function(){
         $('.supItem').click(function(){
             $(this).parent().remove()
             //Ensuite on met a jour le localStorage
-            let test = $(this).siblings('p').text()
-            let index = favListe.indexOf(test)
+            let recette = $(this).siblings('p').text()
+            let index = favListe.indexOf(recette)
             favListe.splice(index, 1)
             localStorage.setItem('favs', favListe)
         })
         // On active le dropdown
         $('.dropdown-trigger').dropdown();
+
+        $('.voir').click(function(){
+            let recette = $(this).siblings('p').text()
+            window.location.href="recettes.html"++""
+        })
     });
 });
 

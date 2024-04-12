@@ -48,7 +48,7 @@ $(document).ready(function(){
             //On récupère les données déjà inscrites dans le localstorage favoris
             let localFavs = localStorage.getItem('favs')
             console.log(localFavs)
-            if(localFavs === null || localFavs === undefined){
+            if(localFavs === null || localFavs === undefined || localFavs === ''){
                 localStorage.setItem('favs', title)
             }
             else{

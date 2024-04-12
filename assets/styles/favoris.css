@@ -1,0 +1,16 @@
+.collection-item{
+    display: flex;
+    align-items: center;
+}
+
+.supItem{
+    margin-left: 15px;
+    background-color: #f26a6a;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.accueil{
+    background: url('../img/accueil-favoris.jpeg') center center no-repeat;
+}
