@@ -17,7 +17,7 @@ $(document).ready(function(){
             let quantiteHtml = ''
             recetteIngredients.forEach(ingredient => {
                 ingredientsHtml += '<li>'+ingredient.nom+'</li>'
-                quantiteHtml += '<li>'+ingredient.quantite+'</li>'
+                quantiteHtml += '<li>'+ingredient.quantite+'<button>+</button></li>'
             })
             let pageIndex = 'page'+((index/3)+1)+''
             if (index % 3 === 0) {
