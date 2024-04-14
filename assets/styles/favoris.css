@@ -14,3 +14,11 @@
 .accueil{
     background: url('../img/accueil-favoris.jpeg') center center no-repeat;
 }
+
+.voir{
+    border: none;
+    border-radius: 5px;
+    background-color: #34a325;
+    margin-left: 10px;
+    padding: 6px;
+}

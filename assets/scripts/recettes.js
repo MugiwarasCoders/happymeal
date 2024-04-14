@@ -24,7 +24,7 @@ $(document).ready(function(){
                 listeRecettesHtml += '<div name="cartes" id="'+pageIndex+'">';
             }
 
-            listeRecettesHtml += '<div class="card"><div class="card-image"><img src="'+recette.img+'"><span class="card-title">'+recette.nom+'</span><a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#recette'+i+'"><i class="material-icons">add</i></a></div><div class="card-content"><ul>'+ingredientsHtml+'</ul><ul>'+quantiteHtml+'</ul></div></div><div id="recette'+i+'" class="modal"><div class="modal-content"><section><div><h4>'+recette.nom+'</h4><img src="'+recette.img+'"></div><div><h5>Ingrédients</h5><p>'+ingredientsHtml+'</p></div></section><h5 class="etapes">Etapes:</h5><p>- '+recette.etapes.join('<br>- ')+'</p></div><div class="modal-footer"><button class="addFavs">Fav</button><button class="modal-close waves-effect waves-green btn">Fermer</button></div></div>';
+            listeRecettesHtml += '<div class="card"><div class="card-image"><img src="'+recette.img+'"><span class="card-title">'+recette.nom+'</span><a class="btn-floating halfway-fab waves-effect waves-light red modal-trigger" href="#recette'+i+'"><i class="material-icons">add</i></a></div><div class="card-content"><ul>'+ingredientsHtml+'</ul><ul>'+quantiteHtml+'</ul></div></div><div id="recette'+i+'" class="modal"><div class="modal-content"><section><div><h4>'+recette.nom+'</h4><img src="'+recette.img+'"></div><div><h5>Ingrédients</h5><p>'+ingredientsHtml+'</p></div></section><h5 class="etapes">Etapes:</h5><p>- '+recette.etapes.join('<br>- ')+'</p></div><div class="modal-footer"><button class="addFavs">⭐</button><button class="modal-close waves-effect waves-green btn">Fermer</button></div></div>';
 
             if ((index + 1) % 3 === 0 || index === recettes.length - 1) {
                 listeRecettesHtml += '</div>';
@@ -56,6 +56,7 @@ $(document).ready(function(){
                 favoris.push(localFavs)
                 //si les favoris ne contiennent pas déjà cette recette
                 if (localFavs.includes(title)){
+                    alert('❌Cette recette fait déjà partie vos favoris!')
                     return false
                 }
                 else{
@@ -63,13 +64,13 @@ $(document).ready(function(){
                 favoris.push(title)
                 //et on push le tableau dans le localStorage favs
                 localStorage.setItem('favs', favoris)
-                //Enfin on ajoute les favoris à la page favoris
+                alert('La recette a bien été ajouté à vos favoris!👌') 
                 }
             }        
         })
 
         //On force le visiteur a atterir sur la page 1 et à n'afficher que 3 cartes
-        window.location.href="#page1"
+        // window.location.href="#page1"
         $('#page1').siblings('div').hide()
         $('#page1-btn').parent().addClass('active')
 
@@ -88,17 +89,17 @@ $(document).ready(function(){
             
         })
         //next
-            $('#next-btn').click(function(){
-                if (window.location.hash < "#page5"){
-                    let Loc = window.location.href
-                    let page = parseInt(Loc.slice(53, 54))
-                    let nextPage = 'page'+(page+1)+''
-                    window.location.href='#'+nextPage+''
-                }
-                else{
-                    window.location.href="#page1"
-                }        
-            })
+        $('#next-btn').click(function(){
+            if (window.location.hash < "#page5"){
+                let Loc = window.location.href
+                let page = parseInt(Loc.slice(53, 54))
+                let nextPage = 'page'+(page+1)+''
+                window.location.href='#'+nextPage+''
+            }
+            else{
+                window.location.href="#page1"
+            }        
+        })
 
         //Au changement d'url on récupère l'id target et on affiche la div correspondante
         $(window).on('hashchange', function(){
@@ -112,6 +113,11 @@ $(document).ready(function(){
         })
         // On active le dropdown
         $('.dropdown-trigger').dropdown();
+
+        //Ici on configure l'ouverture d'une modal lorsque son adresse est spécifée
+        let idRecette = window.location.hash
+        $(idRecette).parent('div').css('display', 'flex')
+        $(idRecette).css('display', 'flex')
     });
 });
 

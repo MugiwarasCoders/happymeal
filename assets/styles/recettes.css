@@ -73,6 +73,12 @@
     scroll-margin-top: 1000px;
 }
 
+.addFavs{
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+}
+
 
 /*Pages*/
 

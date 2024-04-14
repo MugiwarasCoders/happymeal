@@ -36,10 +36,18 @@ $(document).ready(function(){
         // On active le dropdown
         $('.dropdown-trigger').dropdown();
 
+        //Ici au clic du bouton on récupère l'id de chaque recette et on redirige vers sa page
         $('.voir').click(function(){
+            let idRecette;
             let recetteNom = $(this).siblings('p').text();
-            console.log(allRecettes)
+            for (clé in allRecettes){
+                let objet = allRecettes[clé]
+                let objetNom = objet.nom
+                if (recetteNom == objetNom){
+                    idRecette = parseInt(clé) + 1
+                    window.location.href="recettes.html#recette"+idRecette+""
+                }
+            }
         })
     });
-});
-
+})
