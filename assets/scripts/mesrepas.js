@@ -1,35 +1,34 @@
+// Attente du chargement complet du document HTML
 $(document).ready(function(){
+    // Requête fetch pour récupérer les données du fichier JSON
     fetch('../scripts/data.json')
-    .then(response => response.json())
+    .then(response => response.json()) // Convertit la réponse en JSON
     .then(data => {
+        // Extraction des recettes du fichier JSON
         const recettes = data.recettes;
 
-        // Construire une chaîne HTML contenant toutes les recettes et les étapes
+        // Construction d'une chaîne HTML contenant les favoris récupérés depuis le stockage local
         let dropdownList = '';
-        //On récupère les favoris stockés dans le localStorage
         let favoris = localStorage.getItem('favs')
         favoris = favoris.split(',');
         console.log(favoris)
         favoris.forEach(favori => {
             dropdownList += '<li><a>'+favori+'</a></li>'
         })
-        recettes.forEach(recette => {
-            localStorage.setItem(recette.nom, recette.img);
-        });
 
+        // Insertion de la liste des favoris dans le dropdown
         $('#dropdown1').html(dropdownList)
 
-        // Initialiser le dropdown après la construction du contenu HTML
+        // Initialisation du dropdown après la construction du contenu HTML
         $('.dropdown-trigger').dropdown();
 
-        // Ajout de l'événement click pour les boutons "Choose"
+        // Ajout d'un événement click pour les boutons "Choose" dans le dropdown
         $('#dropdown1 a').click(function(){
             let repasPending = $(this).text();
             localStorage.setItem("repasPending", repasPending);
         });
 
-        //Ici on conserve les données de notre tableau en revenant sur la page ou en rechargeant
-        //en récupérant leur données dans localStorage
+        // Conservation des données de la table en récupérant les valeurs depuis le localStorage
         let tableIds = []
         $('table td').each(function(){
             let cellId = $(this).attr('id')
@@ -37,8 +36,7 @@ $(document).ready(function(){
             $(this).html(idStorage)
         })
 
-
-        // Ajout de l'événement click pour les éléments 'td'
+        // Ajout d'un événement click pour les cellules de la table
         $('td').click(function(){
             if ($(this).text()){
                 localStorage.removeItem('repasPending')
@@ -46,16 +44,12 @@ $(document).ready(function(){
                 tdId = $(this).attr('id')
                 localStorage.removeItem(tdId)
             }
-            //on récupère le repas cliqué dans le localStorage
             let repas = localStorage.getItem('repasPending');
             if (repas !== null){
-               //on récupère l'image de chaque plat
                 let image = localStorage.getItem(repas)
                 console.log(image)
-                //on ajoute le repas cliqué au tableau
                 let newCell = '<div class="tabData"><img src="'+image+'"><p>'+repas+'</p></div>'
                 $(this).html(newCell);
-                //on met à jour le localStorage avec la nouvelle valeur
                 let cellId = $(this).attr('id')
                 localStorage.setItem(cellId, newCell) 
             }
@@ -66,7 +60,7 @@ $(document).ready(function(){
     });
 });
 
-//Ici on configure le bouton de reset du tableau
+// Configuration du bouton de reset du tableau
 $('.resetMenu').click(function(){
     $('table td').each(function(){
         tdId = $(this).attr('id')
@@ -74,16 +68,3 @@ $('.resetMenu').click(function(){
         $(this).empty()
     })
 })
-
-
-
-  
-
-
-
-
-
-
-
-
-

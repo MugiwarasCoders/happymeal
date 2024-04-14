@@ -1,93 +1,125 @@
-.box{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+/* Conteneur principal pour les cartes */
+.box {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    justify-content: center; /* Centrage horizontal */
+    gap: 10px; /* Espacement entre les éléments */
 }
 
-.paginationBox{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+/* Conteneur pour la pagination */
+.paginationBox {
+    margin-top: 20px; /* Marge en haut */
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    justify-content: center; /* Centrage horizontal */
 }
 
-.card{
-    max-height: 535px;
-    max-width: 340px;
+/* Carte individuelle */
+.card {
+    max-height: 535px; /* Hauteur maximale */
+    max-width: 340px; /* Largeur maximale */
 }
 
-.card-content{
-    display: flex;
-    justify-content: space-around;
+/* Contenu de la carte */
+.card-content {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    justify-content: space-around; /* Espacement uniforme des éléments */
 }
 
-.box div[name="cartes"]{
-    display: flex;
-    gap: 10px;
+/* Conteneur pour les cartes */
+.box div[name="cartes"] {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    gap: 10px; /* Espacement entre les éléments */
 }
 
-.accueil{
-    background: url('../img/accueil-recettes.jpeg') center center no-repeat;
+/* Style pour la section d'accueil */
+.accueil {
+    background: url('../img/accueil-recettes.jpeg') center center no-repeat; /* Image d'arrière-plan centrée */
 }
 
 /*-------------------Mes Modals------------------*/
 
-.modal{
-    flex-direction: column;
-    min-height: 100vh !important;
-    width: 60%;
+/* Style pour la fenêtre modale */
+.modal {
+    flex-direction: column; /* Alignement en colonnes */
+    min-height: 100vh !important; /* Hauteur minimale de la fenêtre modale */
+    width: 60%; /* Largeur de la fenêtre modale */
 }
 
-.modal-content img{
-    width: 150px;
-    border-radius: 10px;
-    border: 4px solid #1F2023;
+/* Style pour les images dans la fenêtre modale */
+.modal-content img {
+    width: 150px; /* Largeur de l'image */
+    border-radius: 10px; /* Rayon de la bordure */
+    border: 4px solid #1F2023; /* Bordure solide */
 }
 
-.modal-content{
-    min-height: 90%;
+/* Contenu de la fenêtre modale */
+.modal-content {
+    min-height: 90%; /* Hauteur minimale du contenu */
 }
 
-.modal section{
-    display: flex;
-    justify-content: space-between;
+/* Style pour les paragraphes dans la fenêtre modale */
+.modal-content p {
+    overflow: auto; /* Défilement automatique si le contenu dépasse */
 }
 
-.etapes{
-    margin-top: 20px;
+/* Section dans la fenêtre modale */
+.modal section {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    justify-content: space-between; /* Espacement uniforme des éléments */
 }
 
-.glass{
-    background-color: #ffffff7e;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    margin-top: 350px;
-    width: 50%;
-    padding: 40px;
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
+/* Style pour la section des étapes dans la fenêtre modale */
+.etapes {
+    margin-top: 20px; /* Marge en haut */
 }
 
-#page1:target{
-    scroll-margin-top: 1000px;
+/* Style pour la section de verre flou */
+.glass {
+    background-color: #ffffff7e; /* Couleur de fond semi-transparente */
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    flex-direction: column; /* Alignement en colonnes */
+    align-items: center; /* Alignement centralisé */
+    position: absolute; /* Position absolue */
+    margin-top: 350px; /* Marge en haut */
+    width: 50%; /* Largeur */
+    padding: 40px; /* Espacement intérieur */
+    border-radius: 5px; /* Rayon de la bordure */
+    backdrop-filter: blur(5px); /* Filtre de flou pour l'arrière-plan */
 }
 
-.addFavs{
-    border: none;
-    border-radius: 30px;
-    padding: 10px;
+/* Ancre pour la page 1 */
+#page1:target {
+    scroll-margin-top: 1000px; /* Marge de défilement en haut */
 }
 
-
-/*Pages*/
-
-/*MediaQueries*/
-@media (max-width: 426px){
-   .box div[name="cartes"]{
-    flex-direction: column;
-   } 
+/* Bouton pour ajouter aux favoris */
+.addFavs {
+    border: none; /* Suppression de la bordure */
+    border-radius: 30px; /* Rayon de la bordure */
+    padding: 10px; /* Espacement intérieur */
 }
 
+/* Style pour les ingrédients */
+.ingredients {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    justify-content: space-between; /* Espacement uniforme des éléments */
+    margin: 4px 0; /* Marge verticale */
+}
 
+/* Style pour la liste des ingrédients dans la fenêtre modale */
+.ingredientsModal {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    gap: 20px; /* Espacement entre les éléments */
+}
 
+/* Bouton pour ajouter un ingrédient */
+.addButton {
+    border: none; /* Suppression de la bordure */
+}
+
+/* Media Queries pour les petits écrans */
+@media (max-width: 426px) {
+    /* Changement de direction pour les conteneurs de cartes */
+    .box div[name="cartes"] {
+        flex-direction: column; /* Alignement en colonnes */
+    }
+}
