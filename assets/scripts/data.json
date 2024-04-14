@@ -462,10 +462,6 @@
             {
                "nom":"Haricot verts",
                "quantite":"400g"
-            },
-            {
-               "nom":"Huile d'olive",
-               "quantite":"1 cuillère à soupe"
             }
          ],
          "etapes":[
@@ -485,7 +481,7 @@
          "ingredients":[
             {
                "nom":"Mascarpone",
-               "quantite":"250"
+               "quantite":"250g"
             },
             {
                "nom":"Oeuf",

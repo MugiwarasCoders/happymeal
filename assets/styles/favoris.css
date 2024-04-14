@@ -1,16 +1,28 @@
-.collection-item{
-    display: flex;
-    align-items: center;
+/* Élément individuel de la collection */
+.collection-item {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    align-items: center; /* Alignement vertical au centre */
 }
 
-.supItem{
-    margin-left: 15px;
-    background-color: #f26a6a;
-    border: none;
-    border-radius: 10px;
-    height: 30px;
+/* Bouton de suppression d'élément favori*/
+.supItem {
+    margin-left: 15px; /* Marge à gauche */
+    background-color: #f26a6a; /* Couleur de fond */
+    border: none; /* Suppression de la bordure */
+    border-radius: 10px; /* Rayon de la bordure */
+    height: 30px; /* Hauteur */
 }
 
-.accueil{
-    background: url('../img/accueil-favoris.jpeg') center center no-repeat;
+/* Style pour la section d'accueil */
+.accueil {
+    background: url('../img/accueil-favoris.jpeg') center center no-repeat; /* Image d'arrière-plan centrée */
+}
+
+/* Bouton "Voir la recette" */
+.voir {
+    border: none; /* Suppression de la bordure */
+    border-radius: 5px; /* Rayon de la bordure */
+    background-color: #34a325; /* Couleur de fond */
+    margin-left: 10px; /* Marge à gauche */
+    padding: 6px; /* Remplissage intérieur */
 }

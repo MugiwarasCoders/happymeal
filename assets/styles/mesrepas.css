@@ -1,69 +1,81 @@
-body{
-    background-color: #edcf7465;
+/* Style général pour le corps de la page */
+body {
+    background-color: #edcf7465; /* Couleur de fond du corps de la page */
 }
 
-main{
-    margin-top: 100px;
+/* Style pour la section principale */
+main {
+    margin-top: 100px; /* Marge en haut */
 }
 
 /*-----------Accueil-----------*/
 
-.accueil{
-    background: url('../img/accueil-menu.jpeg') center center no-repeat;
+/* Style pour la section d'accueil */
+.accueil {
+    background: url('../img/accueil-menu.jpeg') center center no-repeat; /* Image d'arrière-plan centrée */
 }
 
 /*--------------------MENU------------------*/
 
-.menu{
-	margin-top: 100px;
+/* Style pour la section du menu */
+.menu {
+    margin-top: 100px; /* Marge en haut */
 }
 
-.resetMenu{
-	border-radius: 10px;
-	background-color: #26A69A;
-	padding: 20px;
+/* Bouton de réinitialisation du menu */
+.resetMenu {
+    border-radius: 10px; /* Rayon de la bordure */
+    background-color: #26A69A; /* Couleur de fond */
+    padding: 20px; /* Espacement intérieur */
 }
 
-.titreMenu{
-	display: flex;
-	justify-content: space-between;
+/* Titre du menu */
+.titreMenu {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    justify-content: space-between; /* Espace uniformément réparti entre les éléments */
 }
 
 /*---------------TABLEAU--------------------*/
 
-table td, th{
-	border: 2px solid black;
-	text-align: center;
+/* Style pour les cellules du tableau */
+table td, th {
+    border: 2px solid black; /* Bordure de 2px solide */
+    text-align: center; /* Alignement du texte au centre */
 }
 
-thead{
-	background-color: #202124;
-	color: white;
+/* Style pour l'en-tête du tableau */
+thead {
+    background-color: #202124; /* Couleur de fond */
+    color: white; /* Couleur du texte */
 }
 
-table img:not(.resetMenu img){
-	height: 100px;
-	margin-right: 10px;
-	border-radius: 10px;
-	border: 4px solid #1F2023;
+/* Style pour les images dans le tableau */
+table img:not(.resetMenu img) {
+    height: 100px; /* Hauteur */
+    margin-right: 10px; /* Marge à droite */
+    border-radius: 10px; /* Rayon de la bordure */
+    border: 4px solid #1F2023; /* Bordure de 4px solide */
 }
 
-.resetMenu{
-	padding: 5px;
-	cursor: pointer;
+/* Style pour le bouton de réinitialisation du menu */
+.resetMenu {
+    padding: 5px; /* Espacement intérieur */
+    cursor: pointer; /* Curseur de la souris */
 }
 
-.resetMenu img{
-	width: 40px;
-	height: 40px;
+/* Style pour les images dans le bouton de réinitialisation du menu */
+.resetMenu img {
+    width: 40px; /* Largeur */
+    height: 40px; /* Hauteur */
 }
 
-.tabData{
-	display: flex;
-	align-items: center;
+/* Style pour les données du tableau */
+.tabData {
+    display: flex; /* Affichage en ligne avec les éléments alignés */
+    align-items: center; /* Alignement vertical au centre */
 }
 
-#dropdown1{
-	min-width: 150px;
+/* Style pour le menu déroulant */
+#dropdown1 {
+    min-width: 150px; /* Largeur minimale */
 }
-
