@@ -1,7 +1,7 @@
 let allRecettes = []
 //------------FONCTION POUR RANDOMISER ET AFFICHER LES RECETTES--------------------//
 $(document).ready(function(){
-  fetch("assets/scripts/data.json")
+  fetch("assets/scripts/dataIndex.json")
   .then(response => response.json())
   .then(data => {
     const recettes = data.recettes;
