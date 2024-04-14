@@ -89,6 +89,7 @@ h1{
   text-shadow: 1px 1px 1px;
   font-size: small;
   margin-bottom: 2vh !important;
+  margin-top: 0 !important;
 }
 
 .carte1{
@@ -149,14 +150,19 @@ hr{
   padding: 0 !important;
 }
 
+.recette_reset{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #icone_reset{
-  position: absolute;
   background-color: white;
   border-radius: 50% ;
-  position: fixed;
-  right: 50px;
-  top: 22vh;
+  height: 10vh;
   width: 70px;
+  margin-left: 5%;
+  margin-bottom: 1vh;
 }
 
 #icone_reset:hover{
@@ -187,3 +193,6 @@ hr{
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+.favoris-active {
+  background-image: url('../img/icone_favoris_confirme.png');
+}
