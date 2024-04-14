@@ -67,7 +67,7 @@ $(document).ready(function(){
 //-----------------FONCTION POUR BOUTTON RESET--------------------//
 
 $("#icone_reset").click(function(){
-  fetch("assets/scripts/data.json")
+  fetch("assets/scripts/dataIndex.json")
   .then(response => response.json())
   .then(data => {
     
@@ -130,7 +130,7 @@ function rechercher() {
   }
 
   // Fetch 
-  fetch('assets/scripts/data.json')
+  fetch('assets/scripts/dataIndex.json')
       .then(response => response.json())
       .then(data => {
           // Filtrer
