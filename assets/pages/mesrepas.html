@@ -15,21 +15,31 @@
 </head>
 <body>
 	<header>
-		<!-- Dropdown Structure -->
-		<ul id="dropdown2" class="dropdown-content">
-			<li><a href="favoris.html">Favoris⭐</a></li>
-			<li class="divider"></li>
-			<li><a href="panier.html">Panier🛒</a></li>
-		</ul>
 		<nav>
 			<div class="nav-wrapper">
-			<a href="../index.html" class="brand-logo"><img alt="logo" src="../img/logo_header.png"></a>
-			<ul class="right hide-on-med-and-down">
-				<li><a href="#">Mon Menu</a></li>
-				<li><a href="recettes.html">Recettes</a></li>
-				<!-- Dropdown Trigger -->
-				<li><a class="dropdown-trigger" href="" data-target="dropdown2">Profil<i class="material-icons right">arrow_drop_down</i></a></li>
-			</ul>
+				<a href="../../index.html"><img src="../img/logo_header.png" alt="logo site" class="logo_site center"/></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="recettes.html" class="valign-wrapper lien_menu_navbar"><img src="../img/icone_recettes.png" alt="icone recettes" class="img_menu"></a></li>
+					<li><a href="mesrepas.html" class="valign-wrapper lien_menu_navbar"><img src="../img/icone_menu.png" alt="image menu" class="img_menu"></a></li> 
+					<li><a class="dropdown-trigger valign-wrapper" href="#!" data-target="dropdown1"><img src="../img/icone_favoris.png" alt="image étoiles" class="icone_favoris"><i class="material-icons right">arrow_drop_down</i></a></li>
+				</ul>
+				<ul id="dropdown1" class="dropdown-content">
+					<li><a href="favoris.html" class="navbar_favoris">Mes recettes ⭐</a></li>
+					<li><a href="panier.html" class="navbar_favoris">Mes ingrédients 🛒</a></li>
+					<li class="divider"></li>
+				</ul>
+			</div>
+		</nav>
+		<nav class="navbar2">
+			<div class="nav-wrapper white">
+				<form>
+					<div class="input-field">
+						<input id="search" type="search" required autocomplete="off" placeholder="Rechercher..." />
+						<div id="search-results"></div>
+						<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+						<button type="reset" class="material-icons" id="search-button">close</button>
+					</div>
+				</form>
 			</div>
 		</nav>
 	</header>
@@ -51,10 +61,10 @@
 					<tr> 
 						<th>
 							<!-- Dropdown Trigger -->
-							<a class='dropdown-trigger btn' data-target='dropdown1'>Mes recettes</a>
+							<a class='dropdown-trigger btn' data-target='dropdown2'>Mes recettes</a>
 
 							<!-- Dropdown Structure -->
-							<ul id='dropdown1' class='dropdown-content'>
+							<ul id='dropdown2' class='dropdown-content'>
 
 							</ul>
 						</th> <th rowspan="2">Petit déjeuner</th> <th colspan="2">Déjeuner</th> <th colspan="2">Dîner</th> </tr>

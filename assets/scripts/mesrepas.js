@@ -17,13 +17,13 @@ $(document).ready(function(){
         })
 
         // Insertion de la liste des favoris dans le dropdown
-        $('#dropdown1').html(dropdownList)
+        $('#dropdown2').html(dropdownList)
 
         // Initialisation du dropdown après la construction du contenu HTML
         $('.dropdown-trigger').dropdown();
 
         // Ajout d'un événement click pour les boutons "Choose" dans le dropdown
-        $('#dropdown1 a').click(function(){
+        $('#dropdown2 a').click(function(){
             let repasPending = $(this).text();
             localStorage.setItem("repasPending", repasPending);
         });
