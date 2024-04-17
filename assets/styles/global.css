@@ -147,6 +147,7 @@ main {
   height: 720px; /* Hauteur de la section */
   justify-content: center; /* Centrage vertical */
   display: flex; /* Affichage en ligne */
+  background-size: cover !important;
 }
 
 /* Conteneur de texte avec effet de verre */

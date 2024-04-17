@@ -128,14 +128,13 @@ $(document).ready(function(){
             // Récupération du localStorage des ingrédients
             localIngredients = localStorage.getItem('panier');
             if (localIngredients === null || localIngredients === undefined || localIngredients === ''){
-                localStorage.setItem('panier', ingredientP);
+                ingredients.push(ingredientP)
+                localStorage.setItem('panier', ingredients);
                 alert('L\'ingrédient a bien été ajouté à votre panier!👌');
             }
             else{
-                // Ajout au tableau d'ingrédients
-                ingredients.push(localIngredients);
                 // Si l'ingrédient n'est pas déjà dans le panier
-                if (localIngredients.includes(ingredientP)){
+                if (ingredients.includes(ingredientP)){
                     alert('❌Cet ingrédient fait déjà partie votre panier!');
                     return false;
                 }
