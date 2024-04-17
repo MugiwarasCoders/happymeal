@@ -15,6 +15,7 @@ $(document).ready(function(){
         let listeRecettesHtml = '';
         let i = 0;
         recettes.forEach((recette, index) => {
+            localStorage.setItem(recette.nom, recette.img)
             i++;
             let recetteIngredients = recette.ingredients;
             let ingredientsHtml = '';

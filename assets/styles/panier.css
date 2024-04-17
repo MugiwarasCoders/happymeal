@@ -26,3 +26,15 @@
     margin-left: 10px; /* Marge à gauche */
     padding: 6px; /* Remplissage intérieur */
 }
+
+#download{
+    padding: 10px;
+    background-color: rgb(99, 99, 169);
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.bouton{
+    display: flex;
+    justify-content: center;
+}
