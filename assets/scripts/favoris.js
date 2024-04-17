@@ -41,19 +41,6 @@ $(document).ready(function(){
             }
         });
 
-        // Parcours de la liste des favoris
-        $(favListeIndex).each(function(index, favName){
-            // Vérification si le favori existe dans la liste des recettes
-            let favoriExiste = allRecettes.some(recette => recette.nom === favName);
-            if (favoriExiste){
-                // Récupération de la recette correspondante
-                let recette = allRecettes.find(recette => recette.nom === favName);
-                // Construction de l'élément HTML pour afficher le favori
-                let favHtml = '<li class="collection-item"><p>'+recette.nom+'</p><button class="supItem"><img src="../img/bin.png"></button><button class="voir">Voir la recette</button></li>';
-                // Ajout de l'élément HTML à la liste des favoris
-                $('.collection').append(favHtml);
-            }
-        });
 
         // Gestion du clic sur le bouton de suppression d'un favori
         $('.supItem').click(function(){
